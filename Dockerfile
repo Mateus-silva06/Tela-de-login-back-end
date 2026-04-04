@@ -1,5 +1,5 @@
-# Estágio 1: Build (Compilar o código)
-FROM eclipse-temurin:17-jdk AS build
+# Estágio 1: Build (Compilar o código com Java 21)
+FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
 
 # Copia todos os arquivos do seu projeto para dentro do container
@@ -9,8 +9,8 @@ COPY . .
 RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
-# Estágio 2: Run (Rodar a aplicação)
-FROM eclipse-temurin:17-jre
+# Estágio 2: Run (Rodar a aplicação com Java 21)
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 # Copia apenas o arquivo .jar gerado no passo anterior
