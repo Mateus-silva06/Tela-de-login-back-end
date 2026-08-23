@@ -1,4 +1,16 @@
-target/ *.class *.log
+# Maven
+target/
+
+# Java
+*.class
+
+# Logs
+*.log
+
+# Environment variables
 .env
 
-/target/
+# Eclipse
+.classpath
+.project
+.settings/
